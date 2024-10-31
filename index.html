@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map of Kazakhstan</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="./node_modules/leaflet.markercluster/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="./node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css"/>
+
+    <style>
+        /* Общий стиль карты */
+        #map {
+            height: 100vh; /* Высота карты будет 80% от высоты окна */
+            width: 100%;
+        }
+
+        /* Панели управления на карте */
+        #zoom-level, #color-list {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            max-width: 90%; /* Ограничение ширины для мобильных устройств */
+        }
+
+        #color-list {
+            top: 70px;
+            width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Адаптивный дизайн для мобильных устройств */
+        @media (max-width: 768px) {
+            #map {
+                height: 70vh; /* Высота карты на мобильных устройствах */
+            }
+            #color-list {
+                width: 250px;
+            }
+        }
+
+        /* Остальные стили */
+        .polygon-label {
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        .color-item {
+            margin-bottom: 5px;
+        }
+
+        .color-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .custom-tooltip {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            color: #333;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<div id="zoom-level">Увеличения масштаба: 5</div>
+<div id="color-list">
+    <div class="color-title">Доступные цвета: </div>
+</div>
+
+<!-- Leaflet и плагины -->
+<script src="./node_modules/leaflet/dist/leaflet.js"></script>
+<script src="./node_modules/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+<script src="./maps.js"></script>
+
+<script>
+    // Обработчик для автоматической подстройки размера карты при изменении размеров экрана
+    window.addEventListener('resize', () => {
+        document.getElementById('map').style.height = window.innerHeight * 0.8 + 'px';
+    });
+
+    // Инициализация карты (maps.js) может использовать эту настройку для перерисовки
+</script>
+</body>
+</html>

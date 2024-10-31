@@ -1,0 +1,20 @@
+{
+  "name": "webpetproject",
+  "version": "1.0.0",
+  "main": "maps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "description": ""
+}
